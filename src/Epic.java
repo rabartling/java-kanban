@@ -40,12 +40,13 @@ public class Epic extends Task {
     }
 
     @Override
-    public void setStatus(Status status) {
-        // Do nothing, epic status is managed by its subtasks
-    }
-
-    @Override
     public String toString() {
-        return "Epic{" + "subtasks=" + subtasks + ", " + super.toString() + '}';
+        return "Epic{" +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", description='" + getDescription() + '\'' +
+                ", status=" + getStatus() +
+                ", subTasks=" + subtasks +
+                '}';
     }
 }
