@@ -26,6 +26,12 @@ public class Main {
         System.out.println("Все эпики: " + manager.getAllEpics());
         System.out.println("Все подзадачи: " + manager.getAllSubtasks());
 
+        // Изменение задачи
+        task1.setDescription("Описание задачи 1 измененное");
+        task1.setName("Задача 1 измененная");
+        manager.updateTask(task1);
+
+
         // Изменение статусов
         task1.setStatus(Status.IN_PROGRESS);
         manager.updateTask(task1);
