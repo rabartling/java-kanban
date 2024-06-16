@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        TaskManager manager = new TaskManager();
+        TaskManager manager = Managers.getDefaultTaskManager();
+        HistoryManager historyManager = Managers.getDefaultHistoryManager();
 
         // Создание задач
         Task task1 = new Task("Задача 1", "Описание задачи 1", Status.NEW);
@@ -42,6 +43,16 @@ public class Main {
         System.out.println("Все задачи после изменения статусов: " + manager.getAllTasks());
         System.out.println("Все эпики после изменения статусов: " + manager.getAllEpics());
         System.out.println("Все подзадачи после изменения статусов: " + manager.getAllSubtasks());
+
+        System.out.println("Получение истории просмотра задач: ");
+        manager.getTaskById(task1.getId());
+        manager.getSubtaskById(subtask1_1.getId());
+        manager.getEpicById(epic1.getId());
+        System.out.println(historyManager.getHistory());
+
+        System.out.println("Очистка истории просмотра задач");
+        historyManager.clearHistory();
+        System.out.println(historyManager.getHistory());
 
         // Удаление задачи и эпика
         manager.deleteTaskById(task2.getId());
