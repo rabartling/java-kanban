@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         TaskManager manager = Managers.getDefaultTaskManager();
-        HistoryManager historyManager = Managers.getDefaultHistoryManager();
+        HistoryManager historyManager = Managers.getDefaultHistory();
 
         // Создание задач
         Task task1 = new Task("Задача 1", "Описание задачи 1", Status.NEW);
@@ -50,9 +50,6 @@ public class Main {
         manager.getEpicById(epic1.getId());
         System.out.println(historyManager.getHistory());
 
-        System.out.println("Очистка истории просмотра задач");
-        historyManager.clearHistory();
-        System.out.println(historyManager.getHistory());
 
         // Удаление задачи и эпика
         manager.deleteTaskById(task2.getId());

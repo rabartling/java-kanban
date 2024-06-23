@@ -20,10 +20,4 @@ public class InMemoryHistoryManager implements HistoryManager {
     public List<Task> getHistory() {
         return List.copyOf(history);
     }
-
-    @Override
-    public void clearHistory() {
-        history.clear();
-    }
-
 }
