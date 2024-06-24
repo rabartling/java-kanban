@@ -7,7 +7,8 @@ public class InMemoryTaskManager implements TaskManager {
     private final HashMap<Integer, Epic> epics = new HashMap<>();
     private final HashMap<Integer, Subtask> subtasks = new HashMap<>();
     private final List<Task> history = new ArrayList<>();
-    private final HistoryManager historyManager = new InMemoryHistoryManager();
+    private final HistoryManager historyManager = Managers.getDefaultHistory();
+    // Надеюсь правильно понял что нужно исправить)
 
     @Override
     public List<Task> getAllTasks() {
